@@ -6,7 +6,6 @@
 
 # Hosting Tribute Assistant on Railway for Telegram Payments Automation
 
-
 ## 📌 Overview
 
 **Tribute** is a Telegram-based payment service that accepts bank cards from almost any country.  
