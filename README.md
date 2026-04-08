@@ -1,28 +1,78 @@
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue" />
+  <img src="https://img.shields.io/badge/Platform-Railway-black" />
+  <img src="https://img.shields.io/badge/License-MIT-green" />
+</p>
+
 # Hosting Tribute Assistant on Railway for Telegram Payments Automation
 
-Tribute is a Telegram-based payment service that accepts bank cards from almost any country, which makes it unique, and that’s why it’s gaining popularity among businesses working, for example, with Russian clients from abroad.
+---
 
-It works inside Telegram: you receive orders as chat messages from the Tribute bot. But there's a catch – Tribute doesn’t have an API for digital product payments. It only sends notifications about new orders.
+## 📌 Overview
 
-This Python Telegram assistant handles the routine work. It works with Telethon – the official Telegram library for creating bots that can read and reply to messages.
+**Tribute** is a Telegram-based payment service that accepts bank cards from almost any country.  
+This makes it especially useful for businesses working with international audiences, including Russian clients abroad.
+
+The service operates entirely inside Telegram: orders are delivered as chat messages from the Tribute bot.
+
+⚠️ **Limitation:** Tribute does not provide an API for digital product payments — only notifications about new orders.
+
+---
+
+## 🤖 Solution
+
+This project provides a **Python-based Telegram assistant** that automates order processing.
+
+It uses **Telethon** — the official Telegram library for building clients that can read and respond to messages.
+
+---
+
+## ⚙️ How It Works
 
 When a user makes a payment:
- 1️⃣ Tribute sends a message about the new order
- 2️⃣ The assistant checks if the order description contains the user ID
- 3️⃣ If valid, it sends a request to the server
- 4️⃣ The server activates the product
- 5️⃣ The assistant replies to Tribute with order details and confirms the delivery
 
-This code is designed to work on Railway cloud:
-https://www.railway.com
+1. Tribute sends a message about the new order  
+2. The assistant detects the order and sends it to the backend
+3. The server activates the product
+   - In case of succcess, the assistant replies to Tribute and confirms delivery
+   - In case of an error, the assistant sends message to admin
 
-Railway does not provide runtime SSH access. Instead, credentials are configured directly in the control panel as environment variables. After cloning this project to Railway, set the environment variables in your dashboard. The variables are listed in env.py.
+---
 
-Generating the Telegram Session
-To authorize the assistant, generate a Telethon session locally. Run local_auth.py on your machine. After successful authorization, the script prints your session string. That exact string should be added as the TG_HASH variable on Railway.
+## ☁️ Deployment (Railway)
+
+This project is designed to run on **Railway**:  
+https://www.railway.com  
+
+### Key Notes
+
+- Railway does **not provide SSH access**  
+- Configuration is done via **environment variables**  
+- All required variables are listed in `env.py`  
+
+After deploying the project, set the variables in your Railway dashboard.
+
+---
+
+## 🔐 Telegram Session Setup
+
+To authorize the assistant, you need to generate a **Telethon session string** locally.
+
+### Steps:
+
+1. Run:
+   ```bash
+   python local_auth.py
+   ```
+2. Complete Telegram authorization
+3. Copy the generated session string to Railway variable `TG_HASH`
+
+## 💡 Possible Improvements
 
 There is a room for improvement, such as:
 - Better localization with additional languages (currently English and Russian)
 - Auto-generated feedback responses when payment details are missing
+
+## 🤝 Contribution and support
 
 Feel free to contribute to this project on GitHub. I am also happy to help if you run into any setup issues.
