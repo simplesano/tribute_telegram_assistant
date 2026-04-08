@@ -6,8 +6,6 @@
 
 # Hosting Tribute Assistant on Railway for Telegram Payments Automation
 
----
-
 ## 📌 Overview
 
 **Tribute** is a Telegram-based payment service that accepts bank cards from almost any country.  
@@ -17,15 +15,11 @@ The service operates entirely inside Telegram: orders are delivered as chat mess
 
 ⚠️ **Limitation:** Tribute does not provide an API for digital product payments — only notifications about new orders.
 
----
-
 ## 🤖 Solution
 
 This project provides a **Python-based Telegram assistant** that automates order processing.
 
 It uses **Telethon** — the official Telegram library for building clients that can read and respond to messages.
-
----
 
 ## ⚙️ How It Works
 
@@ -36,8 +30,6 @@ When a user makes a payment:
 3. The server activates the product
    - In case of succcess, the assistant replies to Tribute and confirms delivery
    - In case of an error, the assistant sends message to admin
-
----
 
 ## ☁️ Deployment (Railway)
 
@@ -51,8 +43,6 @@ https://www.railway.com
 - All required variables are listed in `env.py`  
 
 After deploying the project, set the variables in your Railway dashboard.
-
----
 
 ## 🔐 Telegram Session Setup
 
