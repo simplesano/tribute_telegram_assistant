@@ -6,6 +6,7 @@
 
 # Hosting Tribute Assistant on Railway for Telegram Payments Automation
 
+
 ## 📌 Overview
 
 **Tribute** is a Telegram-based payment service that accepts bank cards from almost any country.  
@@ -27,7 +28,7 @@ When a user makes a payment:
 
 1. Tribute sends a message about the new order  
 2. The assistant detects the order and sends it to the backend
-3. The server activates the product
+3. The backend activates the product
    - In case of succcess, the assistant replies to Tribute and confirms delivery
    - In case of an error, the assistant sends message to admin
 
