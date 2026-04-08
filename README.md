@@ -34,7 +34,7 @@ When a user makes a payment:
 ## ☁️ Deployment (Railway)
 
 This project is designed to run on **Railway**:  
-https://www.railway.com  
+[https://www.railway.com  ](https://railway.com?referralCode=HSzcQw)
 
 ### Key Notes
 
